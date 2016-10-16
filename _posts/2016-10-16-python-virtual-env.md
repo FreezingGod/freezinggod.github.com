@@ -13,9 +13,7 @@ Virtualenv也是python的一个软件包，提供了环境分离管理的能力�
 
 # 如何安装使用virtualenv
 要安装virtualenv，可以在terminal中执行以下命令：
-``` shell
     sudo pip install virtualenv
-```
 即使用pip将virtualenv安装到系统级的包目录内。
 
 Virtualenv有两种使用方法：
