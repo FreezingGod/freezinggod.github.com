@@ -19,6 +19,7 @@ Virtualenv也是python的一个软件包，提供了环境分离管理的能力�
 即使用pip将virtualenv安装到系统级的包目录内。
 
 Virtualenv有两种使用方法：
+
 ## 选项一
 不依赖系统级包目录内的软件包建立独立的虚拟环境，这个选项是virtualenv的默认选项。在这种情况下，使用
 
