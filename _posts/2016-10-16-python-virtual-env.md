@@ -21,31 +21,31 @@ Virtualenv也是python的一个软件包，提供了环境分离管理的能力�
 Virtualenv有两种使用方法：
 ## 选项一
 不依赖系统级包目录内的软件包建立独立的虚拟环境，这个选项是virtualenv的默认选项。在这种情况下，使用
-```
+
     sudo pip install package_name
-```
+
 安装到系统级文件夹的软件包在新的virtualenv中不可见亦不可用。如需要使用，需重新安装。
 使用这种选项的virtualenv的建立方式十分简单，假设我们的project文件夹在`~/workspace/project`，该project需要安装某一特定版本的软件包，我们可以通过以下方式为该project建立一个独立的虚拟环境，并与其他的环境分离，互不干扰：
-```
+
     cd ~/workspace/project
     virtualenv env
-```
+
 使用上述命令会在project文件夹下生成一个名为`env`的文件夹，并在该文件夹下copy一份python的可执行文件和site-packages文件夹，用于安装环境内软件包。要使用该环境，可以activate环境：
-```
+
     source ~/workspace/project/env/bin/activate
-```
+
 上述命令会改变环境变量中的`PATH`和`PYTHONHOME`变量，使得python及pip可执行文件地址指向环境中的可执行文件。一旦activate环境之后，bash和zsh会在prompt中提示当前是一个virtualenv环境，此时通过pip安装的软件包会被安装到虚拟环境的目录下（一般不再需要管理权限），使用python也会优先使用安装到虚拟环境的软件包。
 如果需要退出虚拟环境，可以执行：
-```
+
     deactivate
-```
+
 命令，该命令是一个shell function，会将`PATH`和`PYTHONHOME`环境变量恢复。
 
 ## 选项二
 依赖和使用安装到系统级文件夹的软件包，即安装到系统级site-packages内的软件包可以复用，所需的新软件包会被安装到virtualenv的安装目录内。要使用该选项，仅需在生成virtualenv的时候添加一个选项：
-```
+
     virtualenv --system-site-packages env_path
-```
+
 通过上述命令，会在env_path生成一个虚拟环境，环境的开启可退出方法与不依赖系统级包目录的环境一样。
 
 # Best Practice
