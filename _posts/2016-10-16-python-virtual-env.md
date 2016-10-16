@@ -51,6 +51,7 @@ Virtualenv有两种使用方法：
 
 # Best Practice
 通常来说一个比较好的做法是在系统级的python软件包目录中仅保留api不会经常发生变动的软件包，为每一个project建立一个独立的virtualenv并单独进行管理。[这篇blog](https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)推荐的在我看来略显极端的管理方式是：
+
 1. 仅在系统级软件包目录中安装`pip`及`virtualenv`两个软件包。
 2. 在项目中按需建立virtualenv并安装依赖软件包。
 
